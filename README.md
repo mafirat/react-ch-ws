@@ -103,3 +103,7 @@ Context bilgilerinin localStorage'e kaydedilip, localStorage'den okunmasi saglan
 ### p23 CSS duzenlemeleri ve Tema iyilestirmesi yapildi
 
 Temada hatali ve eksik kisimlar duzeltildi. Bazi kisimlarda ikon kullanildi ve projeye FontAwesome kutuphanesi eklendi.
+
+### p24 Hile onleme
+
+Kullanicinin Kopyala-Yapistir ile sonuc girmesi engellendi.

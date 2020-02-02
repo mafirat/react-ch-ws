@@ -28,7 +28,6 @@ const ChallengeInput = (props) => {
                 start
             })
         }
-
     }
 
     const resetState = () => {
@@ -56,8 +55,8 @@ const ChallengeInput = (props) => {
             accuracy,
             wordsPerMinute
         }
-
     }
+
     const stopAndCheck = () => {
         let end = new Date().getTime();
         const { entry, start } = state;
@@ -76,8 +75,6 @@ const ChallengeInput = (props) => {
             stopAndCheck()
         }
     }
-
-
 
     const keyUphandler = () => {
         keyMap = []
@@ -98,10 +95,14 @@ const ChallengeInput = (props) => {
     //     document.removeEventListener("keydown", keyDownHandler);
     //     document.removeEventListener("keyup", keyUphandler);
     // }
+    const pasteHandler = (e) => {
+        e.preventDefault();
+        alert('Biz burada böyle şeyler yapmayız!!!')
+    }
     return (
         <React.Fragment>
             <div className="input-group mb-3">
-                <input type="text" name="entry" autoComplete="off" value={state.entry} disabled={state.isDisabled} onChange={changeHandler} className="form-control" placeholder="Metni giriniz" />
+                <input type="text" name="entry" autoComplete="off" onPaste={pasteHandler} value={state.entry} disabled={state.isDisabled} onChange={changeHandler} className="form-control" placeholder="Yazmaya başladığınızda süreniz başlayacak." />
                 <div className="input-group-append">
                     <button className="btn btn-outline-info rounded-right" onClick={resetState} type="button" id="reset"><i className="fas fa-undo"></i></button>
                 </div>
