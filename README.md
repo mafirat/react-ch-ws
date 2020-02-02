@@ -41,3 +41,7 @@ Karakter siniri eklendi ve metin alani bosaltilince süre sifirlandi.
 ### p8 Skor Kartlari olusturuldu
 
 Skor tipleri olusturuldu ve bu tipleri kullanacak Skor kartlari bilesenleri olusuturuldu. Skor bilgisi bu kartlar araciligi ile gosterildi.
+
+### p9 Context olusturuldu
+
+Theme ile ilgili verilerin tutulacagi ThemeContext olusuturuldu.
