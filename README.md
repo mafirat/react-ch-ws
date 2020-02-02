@@ -91,3 +91,7 @@ ChallengeContext results bilgisi eklendi. Bu yeni alan kullanicilarin test sonuc
 ### p20 Skor kaydetme islemi eklendi
 
 Skor kartlarinin listelendiği bilesene mevcut skoru kaydetme butonu eklendi.
+
+### p21 useReducer hook kullanildi
+
+`useReducer` hook metodu kullanilarak context metodlari aksiyon-reducer araciligi ile gerceklestirilmeye baslandi. challangeReducer icerisine gerekli reducer metodlari eklendi.

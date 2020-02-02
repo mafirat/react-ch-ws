@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useReducer } from 'react';
+import { challengeReducer } from '../reducers/challengeReducer';
 
 export const ChallengeContext = createContext();
 const initState = {
@@ -49,29 +50,33 @@ const initResult = [
 ]
 
 const ChallengeContextProvider = (props) => {
-    const [state, setChallenges] = useState(initState);
-    const [results, setResults] = useState(initResult)
+    const [state, dispatch] = useReducer(challengeReducer, initState, () => {
+        const data = localStorage.getItem('challenges');
+        return data ? JSON.parse(data) : initState;
+    })
+    //const [state, setChallenges] = useState(initState);
+    const [results, setResults] = useState(initResult);
 
-    const addChallenge = (challenge) => {
-        let id = state.index;
-        const newChallenge = { ...challenge, id }
-        setChallenges({
-            ...state,
-            challenges: [...state.challenges, newChallenge],
-            index: id + 1
-        })
-    }
+    // const addChallenge = (challenge) => {
+    //     let id = state.index;
+    //     const newChallenge = { ...challenge, id }
+    //     setChallenges({
+    //         ...state,
+    //         challenges: [...state.challenges, newChallenge],
+    //         index: id + 1
+    //     })
+    // }
+    // const setSelected = (id) => {
+    //     setChallenges({
+    //         ...state,
+    //         selected: id
+    //     })
+    // }
     const addResult = (result) => {
         setResults([...results, result])
     }
-    const setSelected = (id) => {
-        setChallenges({
-            ...state,
-            selected: id
-        })
-    }
     return (
-        <ChallengeContext.Provider value={{ ...state, results: [...results], addChallenge, setSelected, addResult }}>
+        <ChallengeContext.Provider value={{ ...state, results: [...results], dispatch, addResult }}>
             {props.children}
         </ChallengeContext.Provider>
     );
