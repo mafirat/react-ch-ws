@@ -8,12 +8,14 @@ class ThemeContextProvider extends Component {
         dark: {
             app: "bg-dark",
             navbar: "navbar-light bg-warning",
-            toggleButton: "btn-outline-dark"
+            toggleButton: "btn-outline-dark",
+            card : "bg-open-gray border-danger text-white"
         },
         light: {
             app: "bg-light",
             navbar: "navbar-dark bg-dark",
-            toggleButton: "btn-outline-light"
+            toggleButton: "btn-outline-light",
+            card : "bg-light border-info"
         }
     }
     getTheme = () => {

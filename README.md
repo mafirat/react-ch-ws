@@ -53,3 +53,8 @@ Uygulama icerisinde ThemeContext HoC yontemi ile kullanildi.
 ## p11 ThemeContext Gelistirildi
 
 Navbar bileseni ThemeContext ile gelistirildi ve tema degistirme butonu eklendi.
+
+### p12 ThemeContext Gelistirildi.
+
+Tema icin ek alanlar eklendi ve Info bileseninde uygulandi. CSS duzeltmeleri de eklendi.
+
