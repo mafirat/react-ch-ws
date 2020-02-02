@@ -25,3 +25,7 @@ SpeedCheck bileseni alt bilesenlere ayrildi:
 ### p4 ChallengeInput Gelistirildi
 
 ChallengeInput klavyeden gelen "ctrl+ f" komutunu yakalıyor.
+
+### p5 ChallengeInput Gelistirildi - 2
+
+Girilen Metnin kontrolü yapıldı(`CheckEntry`) ve Klavye dinleme metodları bileşen dom'dan çıktığında listenerdan silindi.
