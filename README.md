@@ -83,3 +83,7 @@ Kullanicinin test metnini secebilmesi icin SelectChallenge bileseni eklendi.
 ### p18 ChallengeInput bileseni Gelistirildi
 
 ChallengeInput bileseni hook metodlari kullanilarak fonksiyon tipine donusturuldu ve secili metin bilgisini dogrudan context uzerinden almasi saglandi.
+
+### p19 ChallengeContext'e Results bilgisi eklendi
+
+ChallengeContext results bilgisi eklendi. Bu yeni alan kullanicilarin test sonuclarini kaydedecegi bir alan. Bu sonuclarin listelendigi icin bir ResultsList bileseni guncellendi.

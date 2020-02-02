@@ -27,9 +27,32 @@ const initState = {
     selected: 1,
     index: 5
 }
+const initResult = {
+    results: [
+        {
+            id: 1,
+            challengeId: 2,
+            scores: {
+                duration: 2.5,
+                accuracy: 83,
+                wordsPerMinute: 55
+            }
+        },
+        {
+            id: 2,
+            challengeId: 2,
+            scores: {
+                duration: 2.5,
+                accuracy: 83,
+                wordsPerMinute: 55
+            }
+        }
+    ]
+}
 
 const ChallengeContextProvider = (props) => {
     const [state, setChallenges] = useState(initState);
+    const [results, setResults] = useState(initResult)
 
     const addChallenge = (challenge) => {
         let id = state.index;
@@ -47,7 +70,7 @@ const ChallengeContextProvider = (props) => {
         })
     }
     return (
-        <ChallengeContext.Provider value={{ ...state, addChallenge: addChallenge, setSelected: setSelected }}>
+        <ChallengeContext.Provider value={{ ...state, ...results, addChallenge: addChallenge, setSelected: setSelected }}>
             {props.children}
         </ChallengeContext.Provider>
     );
