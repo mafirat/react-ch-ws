@@ -45,8 +45,7 @@ class ChallengeInput extends Component {
     keyDownHandler = (e) => {
         this.keyMap[e.keyCode] = e.type === "keydown"
         if (this.keyMap[17] && this.keyMap[13]) {
-            this.stop();
-            this.checkEntry();
+            this.stopAndCheck()
         }
     }
 
@@ -66,12 +65,11 @@ class ChallengeInput extends Component {
         let duration = (end - start) / 1000;
         let wordsPerMinute = (entry.length * 60) / (6 * duration);
 
-        const result = {
+        return {
             duration,
             accuracy,
             wordsPerMinute
         }
-        return result;
 
     }
 
@@ -91,9 +89,9 @@ class ChallengeInput extends Component {
         return (
             <React.Fragment>
                 <div className="input-group mb-3">
-                    <input type="text" name="entry" value={entry} disabled={isDisabled} onChange={this.changeHandler} className="form-control" placeholder="Metni giriniz" />
+                    <input type="text" name="entry" autoComplete="off" value={entry} disabled={isDisabled} onChange={this.changeHandler} className="form-control" placeholder="Metni giriniz" />
                     <div className="input-group-append">
-                        <button className="btn btn-outline-secondary" onClick={this.resetState} type="button" id="reset">sıfırla</button>
+                        <button className="btn btn-outline-secondary rounded-right" onClick={this.resetState} type="button" id="reset">sil</button>
                     </div>
                     <br />
                 </div>

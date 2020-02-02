@@ -23,7 +23,7 @@ class SpeedCheck extends Component {
                 <hr />
                 <ChallengeInput challenge={this.challenge} setResult={this.setResult} />
                 <hr />
-                {result !== null ? <Score score={this.state.result} /> : ""}
+                {result !== null ? <Score values={this.state.result} /> : ""}
             </React.Fragment>
         );
     }

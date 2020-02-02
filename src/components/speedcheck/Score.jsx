@@ -1,23 +1,15 @@
 import React from 'react';
+import ScoreCard from './ScoreCard';
+import { ScoreTypes } from '../data/Types';
 
-const Score = (props) => {
-    const { duration, accuracy, wordsPerMinute } = props.score
+const Score = ({ values }) => {
     return (
         <div className="card-deck">
-            <div className="card">
-                <div className="card-body">
-                    Süre: {duration}
-                </div>
-            </div>
-            <div className="card">
-                <div className="card-body">
-                    Doğruluk:{accuracy}</div>
-            </div>
-            <div className="card">
-                <div className="card-body">
-                    DBK: {wordsPerMinute}
-                </div>
-            </div>
+            {
+                Object.entries(values).map(([key, value]) => {
+                    return <ScoreCard type={ScoreTypes[key]} key={key} value={value} />
+                })
+            }
         </div>);
 }
 
