@@ -7,7 +7,7 @@ const initState = {
             app: "bg-dark",
             navbar: "navbar-light bg-warning",
             toggleButton: "btn-outline-dark",
-            card: "bg-open-gray border-danger text-white",
+            card: "bg-open-gray border-warning text-white",
             table: "table-dark"
         },
         light: {

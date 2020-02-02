@@ -99,3 +99,7 @@ Skor kartlarinin listelendiği bilesene mevcut skoru kaydetme butonu eklendi.
 ### p22 context bilgileri localStorage'a kaydedildi
 
 Context bilgilerinin localStorage'e kaydedilip, localStorage'den okunmasi saglandi. Boylece uygulama verileri kaybolmayacak.
+
+### p23 CSS duzenlemeleri ve Tema iyilestirmesi yapildi
+
+Temada hatali ve eksik kisimlar duzeltildi. Bazi kisimlarda ikon kullanildi ve projeye FontAwesome kutuphanesi eklendi.
