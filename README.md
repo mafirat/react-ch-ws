@@ -95,3 +95,7 @@ Skor kartlarinin listelendiği bilesene mevcut skoru kaydetme butonu eklendi.
 ### p21 useReducer hook kullanildi
 
 `useReducer` hook metodu kullanilarak context metodlari aksiyon-reducer araciligi ile gerceklestirilmeye baslandi. challangeReducer icerisine gerekli reducer metodlari eklendi.
+
+### p22 context bilgileri localStorage'a kaydedildi
+
+Context bilgilerinin localStorage'e kaydedilip, localStorage'den okunmasi saglandi. Boylece uygulama verileri kaybolmayacak.

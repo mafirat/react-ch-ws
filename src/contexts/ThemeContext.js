@@ -1,9 +1,7 @@
 import React, { Component, createContext } from 'react';
 
 export const ThemeContext = createContext();
-
-class ThemeContextProvider extends Component {
-    state = {
+const initState = {
         isDarkTheme: false,
         dark: {
             app: "bg-dark",
@@ -19,6 +17,18 @@ class ThemeContextProvider extends Component {
             card: "bg-light border-info",
             table: "table-light"
         }
+    }
+class ThemeContextProvider extends Component {
+    state = initState
+
+    componentDidMount() {
+        const data = localStorage.getItem('theme');
+       this.setState(data ? JSON.parse(data) : initState)
+       
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('theme', JSON.stringify(this.state))
     }
     getTheme = () => {
         const { isDarkTheme, dark, light } = this.state;

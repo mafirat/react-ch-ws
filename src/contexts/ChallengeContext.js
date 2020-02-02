@@ -1,4 +1,4 @@
-import React, { createContext, useState, useReducer } from 'react';
+import React, { createContext, useState, useReducer, useEffect } from 'react';
 import { challengeReducer } from '../reducers/challengeReducer';
 
 export const ChallengeContext = createContext();
@@ -55,7 +55,8 @@ const ChallengeContextProvider = (props) => {
         return data ? JSON.parse(data) : initState;
     })
     //const [state, setChallenges] = useState(initState);
-    const [results, setResults] = useState(initResult);
+    const data = localStorage.getItem('results');
+    const [results, setResults] = useState(data ? JSON.parse(data) : initResult);
 
     // const addChallenge = (challenge) => {
     //     let id = state.index;
@@ -72,6 +73,13 @@ const ChallengeContextProvider = (props) => {
     //         selected: id
     //     })
     // }
+
+    useEffect(() => {
+        localStorage.setItem('challenges', JSON.stringify(state));
+    }, [state])
+    useEffect(() => {
+        localStorage.setItem('results', JSON.stringify(results));
+    })
     const addResult = (result) => {
         setResults([...results, result])
     }
