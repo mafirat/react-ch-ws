@@ -7,16 +7,32 @@ class ThemeContextProvider extends Component {
         isDarkTheme: false,
         dark: {
             app: "bg-dark",
-            navbar: "navbar-light bg-warning"
+            navbar: "navbar-light bg-warning",
+            toggleButton: "btn-outline-dark"
         },
         light: {
             app: "bg-light",
-            navbar: "navbar-dark bg-dark"
+            navbar: "navbar-dark bg-dark",
+            toggleButton: "btn-outline-light"
         }
+    }
+    getTheme = () => {
+        const { isDarkTheme, dark, light } = this.state;
+        return isDarkTheme ? dark : light
+    }
+    changeTheme = () => {
+        this.setState({
+            isDarkTheme: !this.state.isDarkTheme
+        })
     }
     render() {
         return (
-            <ThemeContext.Provider value={{ ...this.state }}>
+            <ThemeContext.Provider value={
+                {
+                    ...this.state,
+                    getTheme: this.getTheme,
+                    changeTheme: this.changeTheme
+                }}>
                 {this.props.children}
             </ThemeContext.Provider>
         );
