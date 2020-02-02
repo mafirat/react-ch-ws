@@ -21,3 +21,7 @@ SpeedCheck bileseni alt bilesenlere ayrildi:
 - Info
 - Score
 - ChallengeInput
+
+### p4 ChallengeInput Gelistirildi
+
+ChallengeInput klavyeden gelen "ctrl+ f" komutunu yakalıyor.
