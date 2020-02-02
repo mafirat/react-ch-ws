@@ -79,3 +79,7 @@ Metinlerin listelendigi bilesen olusturuldu. Birden fazla context kullanma islem
 `useState` kullanarak sinif tipi bir contexti fonksiyon tipinde bir bilesene cevrildi ve `useEffect` hook yapisi incelendi.
 
 Kullanicinin test metnini secebilmesi icin SelectChallenge bileseni eklendi.
+
+### p18 ChallengeInput bileseni Gelistirildi
+
+ChallengeInput bileseni hook metodlari kullanilarak fonksiyon tipine donusturuldu ve secili metin bilgisini dogrudan context uzerinden almasi saglandi.

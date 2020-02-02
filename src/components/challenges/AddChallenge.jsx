@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { ChallengeContext } from "../../contexts/ChallengeContext";
 import { ThemeContext } from "../../contexts/ThemeContext";
 const initState = {
