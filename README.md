@@ -69,3 +69,7 @@ Challenge Context'i eklenerek Info bileseninde kullanildi. Info bileseninde iki 
 ### p15 useContext kullanimi
 
 `useContext` ile Context'e erisme ve kullanma islemleri gerceklestirildi. Yeni Metin ekleme ozelligi eklendi.
+
+### p16 Metinler listelendi
+
+Metinlerin listelendigi bilesen olusturuldu. Birden fazla context kullanma islemi yine useContext ile yapildi.
