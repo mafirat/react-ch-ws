@@ -6,4 +6,6 @@ Bu proje aynı Context API ve Hook konularını anlattığım eğitim serisi iç
 
 Proje kullanıcıya bir metin verilerek yazması istenmektedir. Yazma işleminin sonunda kullanıcının yazım hızı ve doğruluk bilgisi hesaplanmaktadır.
 
+### b1
 
+Temel bilesenler eklendi.
