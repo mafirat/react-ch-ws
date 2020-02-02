@@ -1,4 +1,4 @@
-import React, { Component, createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const ChallengeContext = createContext();
 const initState = {
@@ -28,26 +28,29 @@ const initState = {
     index: 5
 }
 
+const ChallengeContextProvider = (props) => {
+    const [state, setChallenges] = useState(initState);
 
-
-class ChallengeContextProvider extends Component {
-    state = initState;
-    addChallenge = (challenge) => {
-        let id = this.state.index;
+    const addChallenge = (challenge) => {
+        let id = state.index;
         const newChallenge = { ...challenge, id }
-        this.setState({
-            ...this.state,
-            challenges: [...this.state.challenges, newChallenge],
+        setChallenges({
+            ...state,
+            challenges: [...state.challenges, newChallenge],
             index: id + 1
         })
     }
-    render() {
-        return (
-            <ChallengeContext.Provider value={{ ...this.state, addChallenge: this.addChallenge }}>
-                {this.props.children}
-            </ChallengeContext.Provider>
-        );
+    const setSelected = (id) => {
+        setChallenges({
+            ...state,
+            selected: id
+        })
     }
+    return (
+        <ChallengeContext.Provider value={{ ...state, addChallenge: addChallenge, setSelected: setSelected }}>
+            {props.children}
+        </ChallengeContext.Provider>
+    );
 }
 
 export default ChallengeContextProvider;

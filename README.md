@@ -73,3 +73,9 @@ Challenge Context'i eklenerek Info bileseninde kullanildi. Info bileseninde iki 
 ### p16 Metinler listelendi
 
 Metinlerin listelendigi bilesen olusturuldu. Birden fazla context kullanma islemi yine useContext ile yapildi.
+
+### p17 useState ile Context Olusturma
+
+`useState` kullanarak sinif tipi bir contexti fonksiyon tipinde bir bilesene cevrildi ve `useEffect` hook yapisi incelendi.
+
+Kullanicinin test metnini secebilmesi icin SelectChallenge bileseni eklendi.

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { ChallengeContext } from "../../contexts/ChallengeContext";
 import { ThemeContext } from "../../contexts/ThemeContext";
 const initState = {
@@ -7,6 +7,7 @@ const initState = {
 }
 const AddChallenge = () => {
     const [challenge, setChallenge] = useState(initState);
+    //const [deneme, setDeneme] = useState({ name: '' });
 
     const { addChallenge } = useContext(ChallengeContext)
     const theme = useContext(ThemeContext).getTheme();
@@ -21,8 +22,17 @@ const AddChallenge = () => {
         e.preventDefault();
         addChallenge(challenge)
         setChallenge(initState)
-
     }
+
+    // useEffect(() => {
+    //     console.log('add challenge deneme state güncellendi: ', deneme);
+    //     // to do: apiden değer almak
+    // }, [deneme])
+    // useEffect(() => {
+    //     console.log('add challenge challenge state güncellendi: ', challenge);
+    //     // to do: apiden değer almak
+    // }, [challenge])
+
     return (
         <div className={`card text-center  ${theme.card} border`}>
             <div className="card-header">
