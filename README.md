@@ -13,3 +13,11 @@ Temel bilesenler eklendi.
 ### p2
 
 SpeedCheck bileseni gelistirildi. Gerekli alanlar olusuturuldu.
+
+### p3 SpeedCheck bileseni alt bilesenlere ayrildi
+
+SpeedCheck bileseni alt bilesenlere ayrildi:
+
+- Info
+- Score
+- ChallengeInput
