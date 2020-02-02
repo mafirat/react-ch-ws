@@ -65,3 +65,7 @@ Challenge Context'i eklenerek Info bileseninde kullanildi. Info bileseninde iki 
 ### p14 useState kullanimi
 
 `useState` hook'u ile AddChallenge bileseni olusuturuldu.
+
+### p15 useContext kullanimi
+
+`useContext` ile Context'e erisme ve kullanma islemleri gerceklestirildi. Yeni Metin ekleme ozelligi eklendi.

@@ -24,13 +24,26 @@ const initState = {
             difficulty: "hard"
         }
     ],
-    selected : 1
+    selected: 1,
+    index: 5
 }
+
+
+
 class ChallengeContextProvider extends Component {
     state = initState;
+    addChallenge = (challenge) => {
+        let id = this.state.index;
+        const newChallenge = { ...challenge, id }
+        this.setState({
+            ...this.state,
+            challenges: [...this.state.challenges, newChallenge],
+            index: id + 1
+        })
+    }
     render() {
         return (
-            <ChallengeContext.Provider value={{...this.state}}>
+            <ChallengeContext.Provider value={{ ...this.state, addChallenge: this.addChallenge }}>
                 {this.props.children}
             </ChallengeContext.Provider>
         );

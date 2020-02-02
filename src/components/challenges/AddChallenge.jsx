@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { ChallengeContext } from "../../contexts/ChallengeContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
 const initState = {
     text: '',
     difficulty: ''
@@ -6,19 +8,28 @@ const initState = {
 const AddChallenge = () => {
     const [challenge, setChallenge] = useState(initState);
 
+    const { addChallenge } = useContext(ChallengeContext)
+    const theme = useContext(ThemeContext).getTheme();
+
     const changeHandler = (e) => {
         setChallenge({
             ...challenge,
             [e.target.name]: e.target.value
         })
     }
+    const submitHandler = (e) => {
+        e.preventDefault();
+        addChallenge(challenge)
+        setChallenge(initState)
+
+    }
     return (
-        <div className="card">
+        <div className={`card text-center  ${theme.card} border`}>
             <div className="card-header">
-                Metin Ekle
+                <h4 className="card-title">Metin Ekle</h4>
             </div>
             <div className="card-body">
-                <form>
+                <form onSubmit={submitHandler}>
                     <div className="form-group">
                         <label htmlFor="text">Metin:</label>
                         <input type="text" name="text" className="form-control" onChange={changeHandler} value={challenge.text} autoComplete="off" placeholder="Metni giriniz" required />
@@ -32,7 +43,7 @@ const AddChallenge = () => {
                             <option value="hard">Zor</option>
                         </select>
                     </div>
-                    <button className="btn btn-outline-success">Kaydet</button>
+                    <button className="btn btn-outline-success btn-block" type="submit">Kaydet</button>
                 </form>
             </div>
         </div>
