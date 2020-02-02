@@ -45,3 +45,7 @@ Skor tipleri olusturuldu ve bu tipleri kullanacak Skor kartlari bilesenleri olus
 ### p9 Context olusturuldu
 
 Theme ile ilgili verilerin tutulacagi ThemeContext olusuturuldu.
+
+### p10 ThemeContext Kullanildi
+
+Uygulama icerisinde ThemeContext HoC yontemi ile kullanildi.
