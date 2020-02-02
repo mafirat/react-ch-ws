@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import { ThemeContext } from "../../contexts//ThemeContext";
 
 const ScoreCard = ({ value, type }) => {
+    const theme = useContext(ThemeContext).getTheme().scoreCard
     return (
-        <div className={`card border-${type.bgcolor} col p-0 text-center`}>
+        <div className={`card ${theme} border-${type.bgcolor} col p-0 text-center`}>
             <div className="card-header p-0">
                 <h4 className="card-title">{type.title}</h4>
             </div>

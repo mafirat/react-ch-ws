@@ -103,7 +103,7 @@ const ChallengeInput = (props) => {
             <div className="input-group mb-3">
                 <input type="text" name="entry" autoComplete="off" value={state.entry} disabled={state.isDisabled} onChange={changeHandler} className="form-control" placeholder="Metni giriniz" />
                 <div className="input-group-append">
-                    <button className="btn btn-outline-secondary rounded-right" onClick={resetState} type="button" id="reset">sil</button>
+                    <button className="btn btn-outline-info rounded-right" onClick={resetState} type="button" id="reset"><i className="fas fa-undo"></i></button>
                 </div>
                 <br />
             </div>

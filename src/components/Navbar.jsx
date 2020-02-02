@@ -5,7 +5,8 @@ import { ThemeContext } from "../contexts/ThemeContext";
 class Navbar extends React.Component {
     static contextType = ThemeContext
     render() {
-        const theme = this.context.getTheme();
+        const { isDarkTheme, getTheme } = this.context;
+        const theme = getTheme();
         return (
             <nav className={`navbar navbar-expand-lg ${theme.navbar} rounded mb-2`}>
                 <NavLink className="navbar-brand" to="/">YazTest</NavLink>
@@ -25,7 +26,7 @@ class Navbar extends React.Component {
                         </li>
                     </ul>
                 </div>
-                <button type="button" className={`btn ${theme.toggleButton}`} onClick={this.context.changeTheme}>{theme.isDarkTheme ? "Açık Tema" : "Koyu Tema"}</button>
+                <button type="button" className={`btn ${theme.toggleButton}`} onClick={this.context.changeTheme}>{(isDarkTheme === true ? <span>Açık Tema <i className="far fa-lightbulb"></i></span> : <span>Koyu Tema <i className="fas fa-lightbulb"></i></span>)}</button>
             </nav>
         );
     }
