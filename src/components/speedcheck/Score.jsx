@@ -1,21 +1,22 @@
 import React from 'react';
 
-const Score = () => {
+const Score = (props) => {
+    const { duration, accuracy, wordsPerMinute } = props.score
     return (
         <div className="card-deck">
             <div className="card">
                 <div className="card-body">
-                    Süre:
+                    Süre: {duration}
                 </div>
             </div>
             <div className="card">
                 <div className="card-body">
-                    Doğruluk:       </div>
+                    Doğruluk:{accuracy}</div>
             </div>
             <div className="card">
                 <div className="card-body">
-                    DBK:
-        </div>
+                    DBK: {wordsPerMinute}
+                </div>
             </div>
         </div>);
 }

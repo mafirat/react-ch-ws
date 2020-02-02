@@ -29,3 +29,7 @@ ChallengeInput klavyeden gelen "ctrl+ f" komutunu yakalıyor.
 ### p5 ChallengeInput Gelistirildi - 2
 
 Girilen Metnin kontrolü yapıldı(`CheckEntry`) ve Klavye dinleme metodları bileşen dom'dan çıktığında listenerdan silindi.
+
+### p6 Challengeınput Gelistirildi - 3
+
+CheckEntry icerisinde duration hesaplama islemi yapildi.

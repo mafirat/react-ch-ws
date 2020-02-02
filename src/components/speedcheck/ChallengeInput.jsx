@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 const initialState = {
     entry: '',
-    isDisabled: false
+    isDisabled: false,
+    start: null,
+    end: null
 }
 class ChallengeInput extends Component {
     challenge = this.props.challenge
     state = initialState
     keyMap = []
     changeHandler = (e) => {
+        let { start } = this.state;
+        if (start === null) {
+            start = new Date().getTime();
+        }
         this.setState({
             ...this.state,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
+            start
         })
     }
 
@@ -23,13 +30,15 @@ class ChallengeInput extends Component {
         if (this.keyMap[17] && this.keyMap[13]) {
             this.setState({
                 ...this.state,
-                isDisabled: true
+                isDisabled: true,
+                end: new Date().getTime()
             })
+            this.checkEntyr()
         }
     }
 
     checkEntyr = () => {
-        const { entry } = this.state;
+        const { entry, end, start } = this.state;
         let sum = 0;
         const arr_challenge = this.challenge.split(' ');
         const arr_entry = entry.split(' ');
@@ -40,10 +49,19 @@ class ChallengeInput extends Component {
                 }
             }
         });
-        sum = sum + arr_entry.length -1;
+        sum = sum + arr_entry.length - 1;
         let accuracy = (sum * 100 / this.challenge.length);
-        let duration = 0;
-        let wordsPerMinute = (entry.length * 60 ) / (6 * duration);
+        let duration = (end - start) / 1000;
+        let wordsPerMinute = (entry.length * 60) / (6 * duration);
+
+        const result = {
+            duration,
+            accuracy,
+            wordsPerMinute
+        }
+
+        this.props.setResult(result)
+
     }
 
     keyUphandler = () => {
