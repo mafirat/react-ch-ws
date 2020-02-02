@@ -30,7 +30,7 @@ ChallengeInput klavyeden gelen "ctrl+ f" komutunu yakalıyor.
 
 Girilen Metnin kontrolü yapıldı(`CheckEntry`) ve Klavye dinleme metodları bileşen dom'dan çıktığında listenerdan silindi.
 
-### p6 Challengeınput Gelistirildi - 3
+### p6 ChallengeInput Gelistirildi - 3
 
 CheckEntry icerisinde duration hesaplama islemi yapildi.
 
@@ -61,3 +61,7 @@ Tema icin ek alanlar eklendi ve Info bileseninde uygulandi. CSS duzeltmeleri de 
 ### p13 ChallengeContext'i eklendi
 
 Challenge Context'i eklenerek Info bileseninde kullanildi. Info bileseninde iki Context kullanimi orneklendirilmis oldu.
+
+### p14 useState kullanimi
+
+`useState` hook'u ile AddChallenge bileseni olusuturuldu.

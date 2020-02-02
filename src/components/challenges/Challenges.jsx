@@ -1,6 +1,11 @@
 import React from 'react';
+import AddChallenge from './AddChallenge';
 const Challenges = () => {
-    return ( <h3>Metinler</h3> );
+    return (
+        <React.Fragment>
+            <AddChallenge />
+        </React.Fragment>
+    );
 }
- 
+
 export default Challenges;
