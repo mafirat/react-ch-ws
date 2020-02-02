@@ -6,7 +6,7 @@ const initState = {
     result: null
 }
 class SpeedCheck extends Component {
-    challenge = "Hello React";
+    challenge = "Mehmet Ali FIRAT";
     state = initState
 
     setResult = (result) => {
@@ -16,7 +16,6 @@ class SpeedCheck extends Component {
     }
 
     render() {
-        console.log(this.state);
         const {result} = this.state;
         return (
             <React.Fragment>

@@ -14,31 +14,43 @@ class ChallengeInput extends Component {
         if (start === null) {
             start = new Date().getTime();
         }
-        this.setState({
-            ...this.state,
-            [e.target.name]: e.target.value,
-            start
-        })
+        if (e.target.value === '') {
+            this.resetState();
+        } else if (this.challenge.length + 1 <= e.target.value.length) {
+            this.stopAndCheck()
+        } else {
+            this.setState({
+                ...this.state,
+                [e.target.name]: e.target.value,
+                start
+            })
+        }
+
     }
 
     resetState = () => {
         this.setState(initialState);
     }
-
+    stopAndCheck = () => {
+        let end = new Date().getTime();
+        const { entry, start } = this.state;
+        const result = this.checkEntry(entry, end, start)
+        this.props.setResult(result);
+        this.setState({
+            ...this.state,
+            isDisabled: true,
+            end
+        })
+    }
     keyDownHandler = (e) => {
         this.keyMap[e.keyCode] = e.type === "keydown"
         if (this.keyMap[17] && this.keyMap[13]) {
-            this.setState({
-                ...this.state,
-                isDisabled: true,
-                end: new Date().getTime()
-            })
-            this.checkEntyr()
+            this.stop();
+            this.checkEntry();
         }
     }
 
-    checkEntyr = () => {
-        const { entry, end, start } = this.state;
+    checkEntry = (entry, end, start) => {
         let sum = 0;
         const arr_challenge = this.challenge.split(' ');
         const arr_entry = entry.split(' ');
@@ -59,8 +71,7 @@ class ChallengeInput extends Component {
             accuracy,
             wordsPerMinute
         }
-
-        this.props.setResult(result)
+        return result;
 
     }
 
@@ -78,12 +89,16 @@ class ChallengeInput extends Component {
     render() {
         const { entry, isDisabled } = this.state;
         return (
-            <div className="input-group mb-3">
-                <input type="text" name="entry" value={entry} disabled={isDisabled} onChange={this.changeHandler} className="form-control" placeholder="Metni giriniz" />
-                <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" onClick={this.resetState} type="button" id="reset">sıfırla</button>
+            <React.Fragment>
+                <div className="input-group mb-3">
+                    <input type="text" name="entry" value={entry} disabled={isDisabled} onChange={this.changeHandler} className="form-control" placeholder="Metni giriniz" />
+                    <div className="input-group-append">
+                        <button className="btn btn-outline-secondary" onClick={this.resetState} type="button" id="reset">sıfırla</button>
+                    </div>
+                    <br />
                 </div>
-            </div>
+                <small className="text-muted">{`${this.challenge.length - entry.length} / ${this.challenge.length}`}</small>
+            </React.Fragment>
         );
     }
 }

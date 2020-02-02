@@ -33,3 +33,7 @@ Girilen Metnin kontrolü yapıldı(`CheckEntry`) ve Klavye dinleme metodları bi
 ### p6 Challengeınput Gelistirildi - 3
 
 CheckEntry icerisinde duration hesaplama islemi yapildi.
+
+### p7 ChallengeInput Gelistirildi - 4
+
+Karakter siniri eklendi ve metin alani bosaltilince süre sifirlandi.
