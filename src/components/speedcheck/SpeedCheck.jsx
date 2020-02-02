@@ -14,12 +14,12 @@ class SpeedCheck extends Component {
             result
         })
     }
-
+    
     render() {
         const {result} = this.state;
         return (
             <React.Fragment>
-                <Info challenge={this.challenge} />
+                <Info />
                 <hr />
                 <ChallengeInput challenge={this.challenge} setResult={this.setResult} />
                 <hr />
