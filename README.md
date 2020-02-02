@@ -87,3 +87,7 @@ ChallengeInput bileseni hook metodlari kullanilarak fonksiyon tipine donusturuld
 ### p19 ChallengeContext'e Results bilgisi eklendi
 
 ChallengeContext results bilgisi eklendi. Bu yeni alan kullanicilarin test sonuclarini kaydedecegi bir alan. Bu sonuclarin listelendigi icin bir ResultsList bileseni guncellendi.
+
+### p20 Skor kaydetme islemi eklendi
+
+Skor kartlarinin listelendiği bilesene mevcut skoru kaydetme butonu eklendi.

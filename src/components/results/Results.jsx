@@ -7,9 +7,9 @@ const Results = () => {
     const resultRows = results ? results.map(r => {
         return <tr key={r.id}>
             <td>{r.challengeId}</td>
-            <td>{r.scores.duration}</td>
-            <td>{r.scores.wordsPerMinute}</td>
-            <td>{r.scores.accuracy}</td>
+            <td>% {r.scores.accuracy.toFixed(2)}</td>
+            <td>{r.scores.duration.toFixed(2)} sn</td>
+            <td>{r.scores.wordsPerMinute.toFixed(0)} k/dk</td>
         </tr>
     }) : (<tr >
         <td style={{ columnSpan: 4 }}>Veri bulunamadı</td>
