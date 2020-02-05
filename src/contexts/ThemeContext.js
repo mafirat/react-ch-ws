@@ -8,6 +8,7 @@ const initState = {
             navbar: "navbar-light bg-warning",
             toggleButton: "btn-outline-dark",
             card: "bg-open-gray border-warning text-white",
+            score:"bg-open-gray text-white",
             table: "table-dark"
         },
         light: {
@@ -15,6 +16,7 @@ const initState = {
             navbar: "navbar-dark bg-dark",
             toggleButton: "btn-outline-light",
             card: "bg-light border-info",
+            score: "bg-light",
             table: "table-light"
         }
     }

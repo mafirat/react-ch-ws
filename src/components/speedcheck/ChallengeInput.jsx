@@ -58,15 +58,19 @@ const ChallengeInput = (props) => {
     }
 
     const stopAndCheck = () => {
-        let end = new Date().getTime();
-        const { entry, start } = state;
-        const result = checkEntry(entry, end, start)
-        props.setResult(result);
-        setState({
-            ...state,
-            isDisabled: true,
-            end
-        })
+        if (state.entry !== '') {
+            let end = new Date().getTime();
+            const { entry, start } = state;
+            const result = checkEntry(entry, end, start)
+            props.setResult(result);
+            setState({
+                ...state,
+                isDisabled: true,
+                end
+            })
+        } else {
+            alert("Nope, önce bir şeyler yaz istersen. ;)")
+        }
     }
 
     const keyDownHandler = (e) => {
